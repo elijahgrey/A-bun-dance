@@ -32,7 +32,7 @@ if __name__ == "__main__":
     dp = updater.dispatcher
     # Add handlers
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(MessageHandler(Filters.text, hello))
+    dp.add_handler(MessageHandler('hello', hello))
     
 
     # Start the webhook
