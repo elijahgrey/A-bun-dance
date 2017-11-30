@@ -9,7 +9,7 @@ def start(bot, update):
 
 
 def hello(bot, update):
-    string = update.effective_message.text
+    string = update.effective_message.reply_text
     if string.upper() == "HELLO":
         bot.send_message("Sup " + update.message.from_user.first_name)
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     dp = updater.dispatcher
     # Add handlers
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(MessageHandler('hello', hello))
+    dp.add_handler(MessageHandler(Filters.text, hello))
     
 
     # Start the webhook
