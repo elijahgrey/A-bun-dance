@@ -7,11 +7,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 def start(bot, update):
     update.effective_message.reply_text("Sup bruh")
 
-    
-def hello(bot, update):
-update.message.reply_text(
-'Hello {}'.format(update.message.from_user.first_name))
-
 
 def echo(bot, update):
     update.effective_message.reply_text(update.effective_message.text)
@@ -35,7 +30,6 @@ if __name__ == "__main__":
     dp = updater.dispatcher
     # Add handlers
     dp.add_handler(CommandHandler('start', start))
-    updater.dispatcher.add_handler(CommandHandler('hello', hello))
     dp.add_handler(MessageHandler(Filters.text, echo))
     
 
