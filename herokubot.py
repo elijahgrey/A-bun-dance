@@ -1,7 +1,7 @@
 import logging
 import os
 
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler
 
 
 def start(bot, update):
@@ -9,8 +9,8 @@ def start(bot, update):
 
 
 def hello(bot, update):
-update.message.reply_text(
-'Sup {}'.format(update.message.from_user.first_name))
+    update.message.reply_text(
+    'Sup {}'.format(update.message.from_user.first_name))
 
 
 if __name__ == "__main__":
