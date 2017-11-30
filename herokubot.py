@@ -1,7 +1,7 @@
 import logging
 import os
 
-from telegram.ext import Updater, CommandHandler, MessageHandler
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
 def start(bot, update):
@@ -9,8 +9,12 @@ def start(bot, update):
 
 
 def hello(bot, update):
-    update.message.reply_text(
-    'Sup {}'.format(update.message.from_user.first_name))
+    chatid = update.message.chat.id
+    string = update.effective_message.text
+    if string.upper()=="HELLO" or "HI"
+        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
+    if string.upper()[:3]=="HELLO" or "HI"
+        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
 
 
 if __name__ == "__main__":
@@ -31,7 +35,7 @@ if __name__ == "__main__":
     dp = updater.dispatcher
     # Add handlers
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(CommandHandler('hello', hello))
+    dp.add_handler(MessageHandler('hello', hello))
     
 
     # Start the webhook
@@ -39,5 +43,4 @@ if __name__ == "__main__":
                           port=int(PORT),
                           url_path=TOKEN)
     updater.bot.setWebhook("https://{}.herokuapp.com/{}".format(NAME, TOKEN))
-    updater.start_polling()
     updater.idle()
