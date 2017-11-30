@@ -9,9 +9,8 @@ def start(bot, update):
 
 
 def hello(bot, update):
-   
     string = update.effective_message.text
-    if string.upper() == "HELLO"
+    if string.upper() == "HELLO":
         bot.send_message("Sup " + update.message.from_user.first_name)
 
 
