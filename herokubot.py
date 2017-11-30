@@ -11,9 +11,9 @@ def start(bot, update):
 def hello(bot, update):
     chatid = update.message.chat.id
     string = update.effective_message.text
-    if string.upper()=="HELLO" or "HI"
+    if string.upper()=="HELLO" or string.upper()=="HI"
         bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
-    if string.upper()[:3]=="HELLO" or "HI"
+    if string.upper()[:3]=="HELLO" or string.upper()[:3]=="HI"
         bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
 
 
