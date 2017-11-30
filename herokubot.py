@@ -9,9 +9,12 @@ def start(bot, update):
 
 
 def hello(bot, update):
-    string = update.effective_message.reply_text
-    if string.upper() == "HELLO":
-        bot.send_message("Sup " + update.message.from_user.first_name)
+    chatid = update.message.chat.id
+    string = update.effective_message.text
+    if string.upper() == "HI":
+        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
+    if string.upper()[:3] == "HI ":
+        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
 
 
 if __name__ == "__main__":
