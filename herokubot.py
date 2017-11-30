@@ -14,8 +14,8 @@ def echo(bot, update):
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
-    TOKEN = 452290636:AAHsCubD4p0sGDBfkquoqIKnY7gaPXz_9BQ
-    NAME = testingbotsenabled
+    TOKEN = "452290636:AAHsCubD4p0sGDBfkquoqIKnY7gaPXz_9BQ"
+    NAME = "testingbotsenabled"
 
     # Port is given by Heroku
     PORT = os.environ.get('PORT')
