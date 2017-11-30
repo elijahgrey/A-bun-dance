@@ -9,12 +9,10 @@ def start(bot, update):
 
 
 def hello(bot, update):
-    chatid = update.message.chat.id
+   
     string = update.effective_message.text
-    if string.upper()== "HELLO":
-        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
-    if string.upper()[:3]=="HELLO"
-        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name)
+    if string.upper() == "HELLO"
+        bot.send_message("Sup " + update.message.from_user.first_name)
 
 
 if __name__ == "__main__":
@@ -35,7 +33,7 @@ if __name__ == "__main__":
     dp = updater.dispatcher
     # Add handlers
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(MessageHandler('Filters.text, hello))
+    dp.add_handler(MessageHandler(Filters.text, hello))
     
 
     # Start the webhook
