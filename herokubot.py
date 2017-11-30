@@ -10,7 +10,7 @@ def start(bot, update):
 
 def hello(bot, update):
 update.message.reply_text(
-'Hello {}'.format(update.message.from_user.first_name))
+'Sup {}'.format(update.message.from_user.first_name))
 
 
 if __name__ == "__main__":
