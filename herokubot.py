@@ -16,12 +16,6 @@ def hello(bot, update):
     if string.upper()[:3] == "HI ":
         bot.sendMessage(chat_id=update.message.chat_id, text='Sup '+update.message.from_user.first_name)
         
-def printme( str ):
-   "This prints a passed string into this function"
-   print str
-   return
-
-printme("hello")
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
