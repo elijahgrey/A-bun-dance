@@ -21,6 +21,7 @@ def printme( str ):
    print str
    return
 
+printme("hello")
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
