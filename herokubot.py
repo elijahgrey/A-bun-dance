@@ -8,15 +8,13 @@ def start(bot, update):
     update.effective_message.reply_text("Sup bruh")
 
 
-def words(bot, update):
+def hello(bot, update):
     chatid = update.message.chat.id
     string = update.effective_message.text
     if string.upper() == "HI":
         bot.sendMessage(chat_id=update.message.chat_id, text='Sup '+update.message.from_user.first_name)
     if string.upper()[:3] == "HI ":
         bot.sendMessage(chat_id=update.message.chat_id, text='Sup '+update.message.from_user.first_name)
-    if string.upper() == "BYE":
-        bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name)
         
 
 if __name__ == "__main__":
