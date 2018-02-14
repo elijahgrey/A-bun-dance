@@ -16,6 +16,13 @@ def hello(bot, update):
     if string.upper()[:3] == "HI ":
         bot.sendMessage(chat_id=update.message.chat_id, text='Sup '+update.message.from_user.first_name)
         
+def bye(bot, update):
+    chatid = update.message.chat.id
+    string = update.effective_message.text
+    if string.upper() == "BYE":
+        bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name)
+    if string.upper()[:3] == "BYE ":
+        bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name)
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
