@@ -19,7 +19,7 @@ def hello(bot, update):
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
-    TOKEN = "452290636:AAHsCubD4p0sGDBfkquoqIKnY7gaPXz_9BQ"
+    TOKEN = "452290636:AAEAGjoxOjtyZqg8vlNeVn74yxfzi_unhUQ"
     NAME = "testingbotsenabled"
 
     # Port is given by Heroku
