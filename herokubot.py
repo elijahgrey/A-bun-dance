@@ -2,7 +2,21 @@ import logging
 import os
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import requests
+import re
 
+def get_url():
+    contents = requests.get('https://random.dog/woof.json').json()
+    url = contents['url']
+    return url
+
+def bop(bot, update):
+    url = get_url()
+    chat_id = update.message.chat_id
+    bot.send_photo(chat_id=chatid, photo=url)
+    
+
+chat_id = update.message.chat_id
 
 def start(bot, update):
     update.effective_message.reply_text("Sup bruh")
@@ -16,6 +30,13 @@ def hello(bot, update):
     if string.upper()[:3] == "HI ":
         bot.sendMessage(chat_id=update.message.chat_id, text='Sup '+update.message.from_user.first_name)
         
+        
+def main():
+    updater = Updater('452290636:AAEAGjoxOjtyZqg8vlNeVn74yxfzi_unhUQ')
+    dp = updater.dispatcher
+    dp.add_handler(CommandHandler('bop',bop))
+    updater.start_polling()
+    updater.idle()
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
